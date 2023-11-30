@@ -1,0 +1,73 @@
+@media only screen and (min-width: 481px) {
+
+    .heading {
+        background-color: #f0f0f0; /* Add a background color to the header for better visibility */
+        padding: 10px;
+    }
+
+    .heading h2 {
+        text-decoration: none;
+        color: #3A3B3C;
+        margin: 0;
+    }
+
+    .stocks {
+        height: 90%;
+    }
+
+    .stocks img {
+        width: 100%;
+    }
+
+    .stocks .topLayer{
+        display: flex;
+        justify-content: center;
+        height: 50%;
+    }
+
+    .stocks .bottomLayer{
+        height: 50%;
+        clear: left;
+        display: flex;
+        justify-content: center;
+    }
+
+    .stocks .stock1{
+        width: 30%;
+        margin: 1%;
+    }
+
+    .stocks .stock2{
+        width: 30%;
+        margin: 1%;
+    }
+
+    .stocks .stock3{
+        width: 30%;
+        margin: 1%;
+    }
+
+    .stocks .stock4{
+        width: 30%;
+        margin: 1%;
+        margin-right: 5%;
+    }
+
+    .stocks .stock5{
+        width: 30%;
+        margin: 1%;
+        margin-left: 5%;
+    }
+
+    body {
+        background-color: #3A3B3C;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1, h3 {
+        color: aliceblue;
+    }
+
+}
