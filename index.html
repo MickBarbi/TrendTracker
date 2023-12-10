@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>Trend Tracker</title>
         <link rel="stylesheet" type="text/css" href="indexDesktopTablet.css" media="screen and (min-width:481px)">
         <link rel="stylesheet" type="text/css" href="indexPhone.css" media="screen and (max-width:480px)">
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="StockData.js"></script>
     </head>
 
     <body>
@@ -15,38 +16,48 @@
         <div class="stocks">
             <div class="topLayer">
                 <div class="stock1">
-                    <a href="stock1.html">
-                        <img src="https://lh4.googleusercontent.com/OVnEMWIFN_bwoyiEGYu2xsFdTuG9pF4sR4k4-CTx9EN7zZ5Ee47dSWjaWwg4gLqchJoB7no18KEpxVXcaAAKvrVpuq_82lEoMj6D0Dg7gIxXNoiZ7kbEgMN81OA8ySNJArYGirhqYCTB1M9B_vC-jKvaNDCOZqEnNBq-j9OkZDCWRQhqMBZfSdr8vg">
-                    </a>
-                    <h3>EXAMPLE STOCK 1</h3>
+                    <div class="chart-container" style="width: 80%; height: 300px;">
+                        <canvas id="stockChart1"></canvas>
+                    </div>
+                    <a href="stock1.html">APPLE</a>
                 </div>
                 <div class="stock2">
-                    <a href="stock2.html">
-                        <img src="https://www.perkins.org/wp-content/uploads/2022/07/Amazon_2.png">
-                    </a>
-                    <h3>EXAMPLE STOCK 2</h3>
+                    <div class="chart-container" style="width: 80%; height: 300px;">
+                        <canvas id="stockChart2"></canvas>
+                    </div>
+                    <a href="stock2.html">AMAZON</a>
                 </div>
                 <div class="stock3">
-                <a href="stock3.html">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Stock_market_crash_%282020%29.svg">
-                </a>
-                <h3>EXAMPLE STOCK 3</h3>
+                    <div class="chart-container" style="width: 80%; height: 300px;">
+                        <canvas id="stockChart3"></canvas>
+                    </div>
+                    <a href="stock3.html">MICROSOFT</a>
                 </div>
             </div>
             <div class="bottomLayer">
                 <div class="stock4">
-                    <a href="stock4.html">
-                        <img src="https://blogs.sas.com/content/graphicallyspeaking/files/2017/09/Stock_Plot_Discrete_Group.png">
-                    </a>
-                    <h3>EXAMPLE STOCK 4</h3>
+                    <div class="chart-container" style="width: 80%; height: 300px;">
+                        <canvas id="stockChart4"></canvas>
+                    </div>
+                    <a href="stock4.html">NVIDIA</a>
                 </div>
                 <div class="stock5">
-                    <a href="stock5.html">
-                        <img src="https://static.seekingalpha.com/uploads/2022/5/9/55692945-16521254755719802_origin.png">
-                    </a>
-                    <h3>EXAMPLE STOCK 5</h3>
+                    <div class="chart-container" style="width: 80%; height: 300px;">
+                        <canvas id="stockChart5"></canvas>
+                    </div>
+                    <a href="stock5.html">TESLA</a>
                 </div>
             </div>
         </div>
+
+        <script>
+            window.onload = function() {
+                fetchStockData('5LAIEYULOT5WF0WA', 'AAPL', 'stockChart1');
+                fetchStockData('5LAIEYULOT5WF0WA', 'AMZN', 'stockChart2');
+                fetchStockData('5LAIEYULOT5WF0WA', 'MSFT', 'stockChart3');
+                fetchStockData('5LAIEYULOT5WF0WA', 'NVDA', 'stockChart4');
+                fetchStockData('5LAIEYULOT5WF0WA', 'TSLA', 'stockChart5');
+            };
+        </script>
     </body>
 </html>
