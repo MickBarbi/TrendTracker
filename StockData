@@ -1,0 +1,48 @@
+function fetchStockData(apiKey, symbol, canvasId) {
+    // Construct the Alpha Vantage API URL
+    const apiUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${apiKey}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log("Detailed API Response:", JSON.stringify(data, null, 2)); // Detailed log
+            // Check if the API returned the expected data
+            if (!data || !data['Time Series (Daily)']) {
+                console.error('No data available or invalid response structure:', data);
+                return;
+            }
+
+            // Process data to extract dates and closing prices
+            const timeSeries = data['Time Series (Daily)'];
+            const dates = Object.keys(timeSeries).reverse();
+            const closingPrices = dates.map(date => timeSeries[date]['4. close']);
+
+            // Render the chart
+            renderChart(dates, closingPrices, symbol, canvasId);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+function renderChart(dates, closingPrices, symbol, canvasId) {
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: `${symbol} Stock Price`,
+                data: closingPrices,
+                backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                borderColor: 'rgba(0, 123, 255, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+}
