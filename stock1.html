@@ -19,8 +19,12 @@
     <div class="main-content">
         <h1>APPLE</h1>
         <div class="container">
-            <div id="stockChartContainer" style="width: 80%; height: 500px;">
+            <div id="stockChartContainer">
                 <canvas id="stockChart"></canvas>
+                <div
+                <h1>Company Description</h1>
+                <p>Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's largest company by market capitalization, and with US$394.3 billion the largest technology company by 2022 revenue.</p>
+                </div>
                 <div class="info">
                     <h2>Information</h2>
                     <h3>Market Value:</h3>
@@ -33,12 +37,11 @@
                     <p>EXAMPLE HIGH</p>
                     <h3>Low:</h3>
                     <p>EXAMPLE LOW</p>
-                </div>
-                <label for="projected">Project return for </label>
-                <input id="projected" placeholder="# of shares">
-    </div>
-    <div id="stockChartContainer" style="width: 80%; height: 500px;">
-        <canvas id="stockChart"></canvas>
+                    <div class="projected-value">
+                        <label for="projected">Number of shares:</label>
+                        <input id="projected" class="input-black-text" placeholder="# of shares">
+                        <button onclick="calculateProjection()">Calculate Projection</button>
+                        <p id="projectionResult">Projected value: $0</p>
     </div>
     <script>
         const apiKey = '5LAIEYULOT5WF0WA'; 
