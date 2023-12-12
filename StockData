@@ -30,7 +30,7 @@ function fetchStockData(apiKey, symbol, canvasId) {
                 return;
             }
 
-            const timeSeries = data['Time Series (Daily)']; // Define timeSeries here
+            const timeSeries = data['Time Series (Daily)'];
             localStorage.setItem(cacheKey, JSON.stringify({ timestamp: new Date(), timeSeries }));
 
             const dates = Object.keys(timeSeries).reverse();
@@ -69,7 +69,7 @@ function updateStockDetails(timeSeries, symbol) {
     if (priceChangeElement) {
         const priceChangeText = (priceChangePercent >= 0) ? 
             `+${priceChangePercent.toFixed(2)}%` : // Positive change
-            `${priceChangePercent.toFixed(2)}%`;   // Negative change (minus sign is automatically included)
+            `${priceChangePercent.toFixed(2)}%`;   // Negative change
         priceChangeElement.textContent = priceChangeText; // Price Change in percent
     }
 
