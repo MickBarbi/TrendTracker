@@ -1,0 +1,7 @@
+IMPORTANT
+
+GITHUB may not download the files with the correct file extension. Specifically “styles.css” and StockData.js will sometimes be downloaded as .txt files. Consider this before running the code. 
+
+I have used a free API key from Alpha Vantage to retrieve stock data. This free API key has a limit of 25 requests per hour. 
+I have implemented a caching system to locally store API requests in the browser.
+The code checks this local storage to see if an API request will pull duplicate data when it is not needed, and if it is going to pull duplicate data, it will just use the locally stored data
