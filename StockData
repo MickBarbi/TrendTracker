@@ -7,7 +7,7 @@ function fetchStockData(apiKey, symbol, canvasId) {
 
         const isOneDayOld = (new Date()) - new Date(data.timestamp) < 86400000;
         if (isOneDayOld) {
-            const timeSeries = data.timeSeries; // Define timeSeries here
+            const timeSeries = data.timeSeries;
             const dates = Object.keys(timeSeries).reverse();
             const closingPrices = dates.map(date => parseFloat(timeSeries[date]['4. close']));
 
