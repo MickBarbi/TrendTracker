@@ -20,7 +20,7 @@
 
 .stocks a {
     color: white; /* Color for normal state */
-    text-decoration: none; /* Optional: Removes underline from links */
+    text-decoration: none; 
 }
 
 /* Change color of visited links */
